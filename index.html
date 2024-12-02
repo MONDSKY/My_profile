@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="vid.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <!-- Overlay for text visibility -->
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="background-audio" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Content Section -->
+<div class="content">
+    <div class="details">
+        <h1>REYMOND SERVINO</h1>
+        <p>Web Developer | Programmer | Freelancer</p>
+        <p>A passionate individual striving to create impactful digital solutions.</p>
+        <p>MESSAGE ME ON FACEBOOK AND INSTAGRAM</p>
+        <!-- Social Media Links -->
+        <ul class="social-links">
+            <li><a href="https://facebook.com/mond.servino" target="_blank"><img src="th.jpg" alt="Facebook"></a></li>
+            <li><a href="https://facebook.com/mondsky.servino" target="_blank"><img src="th.jpg" alt="Facebook"></a></li>
+            <li><a href="https://instagram.com/mond.servino" target="_blank"><img src="th (1).jpg" alt="Instagram"></a></li>
+        </ul>
+    </div>
+    <div class="profile-picture">
+        <img src="eh.jpg" alt="Profile Picture">
+    </div>
+</div>
+
+
+    <script>
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('background-audio');
+            audio.play().catch((error) => {
+                console.log("Autoplay blocked, trying to play audio after interaction:", error);
+            });
+        });
+    </script>
+</body>
+</html>
