@@ -1,53 +1,80 @@
-/* Global Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Animated Gradient Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -2;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: Subtle Floating Dots */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: floatDots 20s linear infinite;
+  opacity: 0.03;
+  z-index: -1;
+}
+
+@keyframes floatDots {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+/* Base Styles */
 html, body {
   height: 100%;
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: white;
-  background-color: #111;
   overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  min-height: 100vh;
   position: relative;
 }
 
-/* Video Background */
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  z-index: -2;
-}
-
-.video-container video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  filter: brightness(0.5);
-}
-
-.video-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
-
-/* Navbar */
+/* Navigation Bar */
 nav {
   position: fixed;
   top: 0;
@@ -60,12 +87,13 @@ nav {
 
 nav ul {
   display: flex;
-  justify-content: center;
   list-style: none;
+  justify-content: center;
+  padding: 0;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
@@ -74,34 +102,33 @@ nav ul li a {
   font-size: 18px;
   padding: 8px 16px;
   text-transform: uppercase;
-  border-radius: 3px;
   transition: background-color 0.3s ease;
+  border-radius: 5px;
 }
 
 nav ul li a:hover {
   background-color: #f39c12;
 }
 
-/* Content */
+/* Main Content Container */
 .content {
-  margin-top: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 40px;
   max-width: 1200px;
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 0;
+  padding: 40px 20px;
+  text-align: center;
   z-index: 10;
   position: relative;
 }
 
-/* Text */
+/* Text Content */
 .details {
-  max-width: 600px;
-  padding: 20px;
+  max-width: 500px;
+  text-align: left;
 }
 
 .details h1 {
@@ -110,16 +137,19 @@ nav ul li a:hover {
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #f39c12;
 }
 
 .details p {
   font-size: 1.2rem;
   margin-bottom: 15px;
+  color: #ddd;
 }
 
 .details .social-links {
   display: flex;
   gap: 15px;
+  margin-top: 10px;
   list-style: none;
   padding: 0;
 }
@@ -138,27 +168,30 @@ nav ul li a:hover {
 /* Profile Picture */
 .profile-picture {
   text-align: center;
-  padding: 20px;
 }
 
 .profile-picture img {
   width: 350px;
   height: 350px;
-  object-fit: cover;
   border-radius: 50%;
   border: 5px solid #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Responsive */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .details, .profile-picture {
+    max-width: 100%;
     text-align: center;
   }
 
   .details h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .details p {
@@ -173,7 +206,7 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
   .details h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .details p {
@@ -186,7 +219,7 @@ nav ul li a:hover {
   }
 
   nav ul li a {
-    font-size: 16px;
+    font-size: 14px;
     padding: 6px 10px;
   }
 }
