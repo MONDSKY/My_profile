@@ -11,26 +11,26 @@ body {
   line-height: 1.6;
   color: white;
   background-color: #111;
-  position: relative;
   overflow-x: hidden;
 }
 
 /* Navigation Bar */
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   padding: 15px 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav-container .logo {
@@ -73,10 +73,10 @@ nav ul li a:hover {
   width: 100%;
   overflow: hidden;
   display: flex;
-  align-items: center; /* Vertically center children */
-  justify-content: center; /* Horizontally center */
-  z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
+
 .video-container video {
   object-fit: cover;
   width: 100%;
@@ -90,10 +90,10 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 1;
 }
 
-/* Home Content Section */
+/* Hero Content */
 .content {
   position: absolute;
   top: 50%;
@@ -102,12 +102,13 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 3;
+  z-index: 2;
   padding: 20px;
   width: 90%;
   max-width: 1200px;
   flex-wrap: wrap;
 }
+
 .details {
   max-width: 50%;
   text-align: left;
@@ -130,10 +131,6 @@ nav ul li a:hover {
   list-style-type: none;
   display: flex;
   gap: 15px;
-}
-
-.details .social-links li {
-  display: inline-block;
 }
 
 .details .social-links img {
@@ -161,25 +158,22 @@ nav ul li a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-/* About Section */
-.about, .projects, .contact {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
+/* Section Defaults */
+section {
+  padding: 100px 20px;
+  width: 90%;
   max-width: 900px;
-  padding: 20px;
-  text-align: center;
-  z-index: 20;
+  margin: 0 auto;
 }
 
+/* Section Headers */
 .about h1, .projects h1, .contact h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
+  text-align: center;
 }
 
 .about p, .contact p {
@@ -187,6 +181,7 @@ nav ul li a:hover {
   line-height: 1.8;
   margin-bottom: 20px;
   color: #ddd;
+  text-align: center;
 }
 
 .about strong {
@@ -303,6 +298,7 @@ form button:hover {
   .content {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .details h1,
@@ -324,12 +320,12 @@ form button:hover {
   }
 
   .profile-picture img {
-    width: 120px;
-    height: 120px;
+    width: 250px;
+    height: 250px;
   }
 
   .project-card {
-    max-width: 45%;
+    max-width: 90%;
   }
 
   form {
@@ -344,11 +340,6 @@ form button:hover {
   .contact h1 {
     font-size: 2rem;
   }
-.content {
-  top: 55%;
-  flex-direction: column;
-  text-align: center;
-}
 
   .details p,
   .about p,
@@ -362,12 +353,12 @@ form button:hover {
   }
 
   .profile-picture img {
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
   }
 
   .project-card {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   form input,
