@@ -1,0 +1,137 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0e0e1a;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+  background-color: #f39c12;
+  color: #000;
+  border-radius: 5px;
+}
+
+/* About Section */
+.about {
+  padding: 140px 30px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.about h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #f39c12;
+  text-shadow: 0 0 10px #f39c12;
+}
+.about p {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Glowing Floating Background */
+.glow-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float 18s ease-in-out infinite;
+}
+
+.glow1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.glow2 {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 70%;
+  animation-delay: 4s;
+}
+.glow3 {
+  width: 250px;
+  height: 250px;
+  top: 80%;
+  left: 30%;
+  animation-delay: 8s;
+}
+.glow4 {
+  width: 350px;
+  height: 350px;
+  top: 30%;
+  left: 85%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+}
