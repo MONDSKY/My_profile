@@ -96,17 +96,18 @@ nav ul li a:hover {
 /* Home Content Section */
 .content {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 3;
   padding: 20px;
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
+  flex-wrap: wrap;
 }
-
 .details {
   max-width: 50%;
   text-align: left;
@@ -343,6 +344,11 @@ form button:hover {
   .contact h1 {
     font-size: 2rem;
   }
+.content {
+  top: 55%;
+  flex-direction: column;
+  text-align: center;
+}
 
   .details p,
   .about p,
