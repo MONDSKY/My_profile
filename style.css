@@ -12,6 +12,7 @@ body {
   color: white;
   background-color: #111;
   overflow-x: hidden;
+  padding-top: 60px; /* Added this line! */
 }
 
 /* Navigation Bar */
