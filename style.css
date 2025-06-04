@@ -4,15 +4,26 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Body Styles */
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: white;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 60px; /* Added this line! */
+  padding-top: 60px; /* For navbar */
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px; /* Reduced from 100px 20px */
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Navigation Bar */
